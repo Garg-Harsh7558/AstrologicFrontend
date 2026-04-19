@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-spin-slow: spin 15s linear infinite;
+  --animate-reverse-spin-slow: reverse-spin 20s linear infinite;
+  --animate-in: animate-in 0.5s ease-out forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-zoom-in: zoom-in 0.5s ease-out forwards;
+}
+
+@keyframes reverse-spin {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes animate-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoom-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Custom animation utilities for Tailwind 4 */
+.animate-in { animation: animate-in 0.7s ease-out; }
+.fade-in { animation: fade-in 0.7s ease-out; }
+.zoom-in { animation: zoom-in 0.7s ease-out; }
+
+:root {
+  font-family: 'Outfit', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #050507;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+

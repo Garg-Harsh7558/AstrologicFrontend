@@ -8,6 +8,7 @@ import ResetPassword from './auth/resetpassword';
 import Home from './pages/Home';
 import Birthdetails from './components/charts/birthdetails';
 import Displaycharts from './components/charts/displaycharts';
+import AiAnalysis from './components/charts/AiAnalysis';
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/birthdetails" element={<Birthdetails />} />
           <Route path="/displaycharts" element={<Displaycharts />} />
+          <Route path="/aianalysis" element={<AiAnalysis />} />
           
           {/* Fallback */}
           <Route path="*" element={

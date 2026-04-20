@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 import { useNavigate, Link } from 'react-router-dom';
 import bgImg from '../assets/bg.png';
 
@@ -37,14 +37,14 @@ function Register() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await api.post('/auth/register', {
         username,
         email,
         password
-      }, { withCredentials: true });
+      });
 
       // After registration, send the verification email (OTP)
-      await axios.post('http://localhost:5000/api/auth/verify-email', { email }, { withCredentials: true });
+      await api.post('/auth/verify-email', { email });
 
       setMessage({ type: 'success', text: 'Registration successful! Verification code sent.' });
       setTimeout(() => navigate('/verify', { state: { email } }), 2000);

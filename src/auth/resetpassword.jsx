@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import bgImg from '../assets/bg.png';
 
@@ -44,7 +44,7 @@ function ResetPassword() {
         password
       };
       
-      const response = await axios.post('http://localhost:5000/api/auth/verify-otp-for-password-reset', payload);
+      const response = await api.post('/auth/verify-otp-for-password-reset', payload);
       
       setMessage({ type: 'success', text: 'Account restored! Your new path is set.' });
       

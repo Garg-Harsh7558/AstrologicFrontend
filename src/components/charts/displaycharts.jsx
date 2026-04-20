@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../api/axios';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar';
 
 function Displaycharts() {
+    const navigate = useNavigate();
     const [charts, setCharts] = useState({});
     const [selectedProfile, setSelectedProfile] = useState(null);
     const [activeTab, setActiveTab] = useState('d1Chart'); 
     const [loading, setLoading] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
     const [error, setError] = useState("");
-
+    const [datatoai, setDatatoai] = useState("");
     const fetchCharts = async () => {
         setLoading(true);
         try {
-            const response = await axios.post("http://localhost:5000/api/astro/display-charts", {}, { withCredentials: true });
+            const response = await api.post("/astro/display-charts", {});
             setCharts(response.data.chart);
             if (response.data.chart?.allchart?.length > 0) {
                 // Keep the same profile selected if it still exists after refresh
                 const currentName = selectedProfile?.name;
                 const found = response.data.chart.allchart.find(c => c.name === currentName);
                 setSelectedProfile(found || response.data.chart.allchart[0]);
+  if(response.data.chart.allchart?.length===1){ setDatatoai(response.data.chart.allchart[0].allChartDataString);}
             } else {
                 setSelectedProfile(null);
             }
@@ -38,9 +41,8 @@ function Displaycharts() {
 
         setIsDeleting(true);
         try {
-            await axios.delete("http://localhost:5000/api/astro/delete-chart", {
-                data: { name: selectedProfile.name },
-                withCredentials: true
+            await api.delete("/astro/delete-chart", {
+                data: { name: selectedProfile.name }
             });
             // Refresh logic
             await fetchCharts();
@@ -191,7 +193,7 @@ function Displaycharts() {
                         {charts.allchart?.map((profile, i) => (
                             <button 
                                 key={i} 
-                                onClick={() => setSelectedProfile(profile)}
+                                onClick={() => {setSelectedProfile(profile);setDatatoai(profile.allChartDataString)}}
                                 className={`px-8 py-4 rounded-2xl text-xs font-bold uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
                                     selectedProfile?.name === profile.name 
                                     ? 'bg-white text-black shadow-[0_20px_40px_rgba(255,255,255,0.1)] scale-105' 
@@ -212,13 +214,21 @@ function Displaycharts() {
                                 <h2 className="text-3xl font-bold text-white mb-1 uppercase tracking-tight">{selectedProfile.name}</h2>
                                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Active Record</p>
                             </div>
-                            <button 
-                                onClick={handleDelete}
-                                disabled={isDeleting}
-                                className="px-6 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all disabled:opacity-50"
-                            >
-                                {isDeleting ? 'Deleting...' : 'Delete Profile'}
-                            </button>
+                            <div className="flex gap-3 items-center">
+                                <button 
+                                    onClick={() => navigate('/aianalysis', { state: { datatoai: datatoai } })}
+                                    className="px-6 py-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-widest hover:bg-purple-500 hover:text-white transition-all"
+                                >
+                                    AI Analysis
+                                </button>
+                                <button 
+                                    onClick={handleDelete}
+                                    disabled={isDeleting}
+                                    className="px-6 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all disabled:opacity-50"
+                                >
+                                    {isDeleting ? 'Deleting...' : 'Delete Profile'}
+                                </button>
+                            </div>
                         </div>
 
                         <div className="flex flex-wrap gap-2 p-2 bg-white/5 rounded-[2rem] border border-white/10 w-fit">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 import { useNavigate, Link } from 'react-router-dom';
 import bgImg from '../assets/bg.png';
 
@@ -22,7 +22,7 @@ function ForgotPassword() {
 
     try {
       const payload = useEmail ? { email } : { username };
-      const response = await axios.post('http://localhost:5000/api/auth/forgot-password', payload);
+      const response = await api.post('/auth/forgot-password', payload);
       
       setMessage({ type: 'success', text: 'The stars have aligned. Check your email for the reset code.' });
       

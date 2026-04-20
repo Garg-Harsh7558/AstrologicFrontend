@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../api/axios';
 import Navbar from '../Navbar';
 
 /**
@@ -27,7 +27,7 @@ function Birthdetails() {
     if (!searchCity || searchCity.length < 3) return;
     setLoading(true);
     try {
-      const response = await axios.post(`http://localhost:5000/api/astro/get-geocode`, { city: searchCity }, { withCredentials: true });
+      const response = await api.post(`/astro/get-geocode`, { city: searchCity });
       setOrdinates(response.data.data || []);
     } catch (error) {
       console.log(error);
@@ -51,7 +51,7 @@ function Birthdetails() {
         latitude, longitude,
         timezone: 5.5, // Default for India, can be made dynamic
       };
-      await axios.post(`http://localhost:5000/api/astro/take-birth-details`, payload, { withCredentials: true });
+      await api.post(`/astro/take-birth-details`, payload);
       navigate("/");
     } catch (error) {
       setError(error.response?.data?.message || "Failed to save details.");

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import bgImg from '../assets/bg.png';
 
@@ -26,7 +26,7 @@ function Verify() {
     setResending(true);
     setMessage({ type: 'success', text: 'Resending code...' });
     try {
-      await axios.post('http://localhost:5000/api/auth/verify-email', { email }, { withCredentials: true });
+      await api.post('/auth/verify-email', { email });
       setOtp('');
       setMessage({ type: 'success', text: 'A new code has been sent to your email.' });
     } catch (error) {
@@ -50,10 +50,10 @@ function Verify() {
 
     try {
       // Backend expects 'otpCode' and 'email' or 'username'
-      const response = await axios.post('http://localhost:5000/api/auth/verify-otp', {
+      const response = await api.post('/auth/verify-otp', {
         email,
         otpCode
-      }, { withCredentials: true });
+      });
       setMessage({ type: 'success', text: 'Identity verified! You can now sign in.' });
       setTimeout(() => navigate('/login'), 2000);
     } catch (error) {

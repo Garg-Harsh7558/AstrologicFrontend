@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 import { useNavigate, Link } from 'react-router-dom';
 import bgImg from '../assets/bg.png';
 
@@ -24,7 +24,7 @@ function Login() {
 
     try {
       const payload = logInWithEmail ? { email, password } : { username, password };
-      const response = await axios.post('http://localhost:5000/api/auth/login', payload, { withCredentials: true });
+      const response = await api.post('/auth/login', payload);
       
       setMessage({ type: 'success', text: 'Welcome back! Your path is clear.' });
       

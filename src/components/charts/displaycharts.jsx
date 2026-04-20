@@ -64,7 +64,7 @@ function Displaycharts() {
         const isD1 = chartType === 'd1Chart';
 
         return (
-            <div className="overflow-x-auto rounded-3xl border border-white/5 bg-white/[0.02]">
+            <div className="overflow-x-auto rounded-3xl border border-white/5 bg-white/2">
                 <table className="w-full text-left border-separate border-spacing-0">
                     <thead className="bg-white/5 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold">
                         <tr>
@@ -79,7 +79,7 @@ function Displaycharts() {
                     </thead>
                     <tbody className="text-sm text-slate-300">
                         {entries.map(([key, item], idx) => (
-                            <tr key={idx} className="hover:bg-white/[0.03] transition-colors group">
+                            <tr key={idx} className="hover:bg-white/5 transition-colors group">
                                 <td className="p-5 font-bold text-white uppercase tracking-tight group-hover:text-purple-400 transition-colors">
                                     {item.name || item.planet || key}
                                 </td>
@@ -108,7 +108,7 @@ function Displaycharts() {
     const ShadbalaTable = ({ data }) => {
         if (!data) return null;
         return (
-            <div className="overflow-x-auto rounded-3xl border border-white/5 bg-white/[0.02]">
+            <div className="overflow-x-auto rounded-3xl border border-white/5 bg-white/2">
                 <table className="w-full text-left border-separate border-spacing-0">
                     <thead className="bg-white/5 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold">
                         <tr>
@@ -122,7 +122,7 @@ function Displaycharts() {
                     </thead>
                     <tbody className="text-sm text-slate-300">
                         {Object.entries(data).map(([planet, details]) => (
-                            <tr key={planet} className="hover:bg-white/[0.03] transition-colors">
+                            <tr key={planet} className="hover:bg-white/5 transition-colors">
                                 <td className="p-5 font-bold text-white uppercase tracking-tight">{planet}</td>
                                 <td className="p-5 font-mono text-xs">{parseFloat(details.Shadbala).toFixed(2)}</td>
                                 <td className="p-5 font-mono text-xs text-purple-400">{parseFloat(details.rupas).toFixed(3)}</td>
@@ -142,7 +142,7 @@ function Displaycharts() {
         return (
             <div className="space-y-6">
                 {Object.entries(data).map(([lord, subPeriods]) => (
-                    <div key={lord} className="bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-8 lg:p-10">
+                    <div key={lord} className="bg-white/2 border border-white/5 rounded-[2.5rem] p-8 lg:p-10">
                         <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                             <span className="w-3 h-3 rounded-full bg-purple-500"></span>
                             {lord} Mahadasha
@@ -188,7 +188,7 @@ function Displaycharts() {
             
             <div className="max-w-7xl mx-auto p-6 py-12 lg:p-20">
                 <div className="mb-16">
-                    <h1 className="text-5xl font-bold bg-gradient-to-r from-white to-white/40 bg-clip-text text-transparent mb-6">Celestial Vault</h1>
+                    <h1 className="text-5xl font-bold bg-linear-to-r from-white to-white/40 bg-clip-text text-transparent mb-6">Celestial Vault</h1>
                     <div className="flex gap-4 overflow-x-auto pb-6 custom-scrollbar scroll-smooth">
                         {charts.allchart?.map((profile, i) => (
                             <button 
@@ -209,7 +209,7 @@ function Displaycharts() {
                 {selectedProfile && (
                     <div className="space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
                         {/* Profile Header with Delete Button */}
-                        <div className="flex justify-between items-center bg-white/[0.02] border-l-4 border-purple-500 p-6 rounded-r-3xl">
+                        <div className="flex justify-between items-center bg-white/2 border-l-4 border-purple-500 p-6 rounded-r-3xl">
                             <div>
                                 <h2 className="text-3xl font-bold text-white mb-1 uppercase tracking-tight">{selectedProfile.name}</h2>
                                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Active Record</p>
@@ -231,12 +231,12 @@ function Displaycharts() {
                             </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-2 p-2 bg-white/5 rounded-[2rem] border border-white/10 w-fit">
+                        <div className="flex flex-wrap gap-2 p-2 bg-white/5 rounded-3xl border border-white/10 w-fit">
                             {tabs.map(tab => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`px-8 py-4 rounded-[1.5rem] text-[10px] font-bold tracking-[0.2em] uppercase transition-all ${
+                                    className={`px-8 py-4 rounded-3xl text-[10px] font-bold tracking-[0.2em] uppercase transition-all ${
                                         activeTab === tab.id 
                                         ? 'bg-white/10 text-white shadow-[0_0_20px_rgba(255,255,255,0.05)]' 
                                         : 'text-slate-500 hover:text-slate-300'
@@ -263,7 +263,7 @@ function Displaycharts() {
                 
                 {/* Empty State */}
                 {!loading && !selectedProfile && (
-                    <div className="text-center py-40 bg-white/[0.02] border border-dashed border-white/10 rounded-[3rem]">
+                    <div className="text-center py-40 bg-white/2 border border-dashed border-white/10 rounded-[3rem]">
                         <p className="text-slate-500 text-lg italic">Your vault is empty. Generate a birth profile to get started.</p>
                     </div>
                 )}

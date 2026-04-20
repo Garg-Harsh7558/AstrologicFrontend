@@ -113,7 +113,7 @@ function Home() {
             <div className="w-2 h-2 rounded-full bg-purple-500 animate-ping"></div>
             <span className="text-[10px] font-bold text-purple-400 uppercase tracking-[0.3em]">Live Cosmic Alignment</span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent pb-2 mb-6 tracking-tight">
+          <h1 className="text-5xl lg:text-7xl font-bold bg-linear-to-r from-white via-white to-white/40 bg-clip-text text-transparent pb-2 mb-6 tracking-tight">
             Celestial Insights
           </h1>
           <p className="text-slate-400 text-lg lg:text-xl max-w-2xl font-light leading-relaxed">
@@ -124,14 +124,14 @@ function Home() {
         {loading ? (
           <div className="flex gap-6 overflow-x-auto pb-10">
             {[1, 2, 3].map(i => (
-              <div key={i} className="min-w-[320px] h-[350px] rounded-[3rem] bg-white/[0.02] border border-white/5 animate-pulse"></div>
+              <div key={i} className="min-w-[320px] h-[350px] rounded-[3rem] bg-white/5 border border-white/5 animate-pulse"></div>
             ))}
           </div>
         ) : data && (
           <div className="space-y-10">
             
             {/* Top Overview Bar: Active Hora, Lunar, Solar in one rectangle */}
-            <div className="backdrop-blur-3xl bg-white/[0.03] border border-white/10 rounded-[3rem] p-4 lg:p-1 hover:bg-white/[0.04] transition-all duration-700 shadow-2xl overflow-hidden">
+            <div className="backdrop-blur-3xl bg-white/5 border border-white/10 rounded-[3rem] p-4 lg:p-1 hover:bg-white/5 transition-all duration-700 shadow-2xl overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
                 
                 {/* Active Hora Section */}
@@ -148,7 +148,7 @@ function Home() {
                         </>
                       )}
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center animate-spin-slow animate-bounce">
+                    <div className="w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center animate-spin-slow">
                       <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
@@ -196,7 +196,7 @@ function Home() {
             </div>
 
             {/* Hora today */}
-            <div className="backdrop-blur-3xl bg-white/[0.03] border border-white/10 rounded-[3rem] p-10 hover:bg-white/[0.04] transition-all duration-700 shadow-2xl">
+            <div className="backdrop-blur-3xl bg-white/5 border border-white/10 rounded-[3rem] p-10 hover:bg-white/5 transition-all duration-700 shadow-2xl">
               <div className="flex items-center justify-between mb-10">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center border border-purple-500/30">

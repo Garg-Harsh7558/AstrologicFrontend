@@ -54,7 +54,7 @@ function ForgotPassword() {
 
       {/* Main Glassmorphism Card */}
       <div className="relative z-10 w-full max-w-[450px] p-4 animate-in fade-in zoom-in duration-700">
-        <div className="backdrop-blur-2xl bg-white/[0.03] border border-white/10 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-500 hover:border-purple-500/30">
+        <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-500 hover:border-purple-500/30">
           
           {/* Header Section */}
           <div className="pt-12 pb-6 px-10 text-center">
@@ -146,8 +146,8 @@ function ForgotPassword() {
       {/* Decorative elements */}
       <div className="absolute top-[15%] right-[20%] w-1 h-1 bg-white rounded-full animate-pulse shadow-[0_0_10px_white]"></div>
       <div className="absolute bottom-[20%] left-[15%] w-1 h-1 bg-purple-400 rounded-full animate-pulse delay-700 shadow-[0_0_10px_#a855f7]"></div>
-      <div className="absolute top-10 right-10 w-48 h-48 border border-white/[0.03] rounded-full animate-spin-slow pointer-events-none"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 border border-white/[0.03] rounded-full animate-reverse-spin-slow pointer-events-none"></div>
+      <div className="absolute top-10 right-10 w-48 h-48 border border-white/5 rounded-full animate-spin-slow pointer-events-none"></div>
+      <div className="absolute bottom-10 left-10 w-72 h-72 border border-white/5 rounded-full animate-reverse-spin-slow pointer-events-none"></div>
     </div>
   );
 }

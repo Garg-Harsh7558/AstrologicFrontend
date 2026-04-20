@@ -77,7 +77,7 @@ function Verify() {
 
       {/* Main Glassmorphism Card */}
       <div className="relative z-10 w-full max-w-[450px] p-4 animate-in fade-in zoom-in duration-700">
-        <div className="backdrop-blur-2xl bg-white/[0.03] border border-white/10 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-500 hover:border-purple-500/30">
+        <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-500 hover:border-purple-500/30">
           {/* Header Section */}
           <div className="pt-12 pb-6 px-10 text-center">
             <div className="inline-block mb-4 p-3 rounded-full bg-linear-to-br from-purple-500/10 to-indigo-500/10 border border-white/10">

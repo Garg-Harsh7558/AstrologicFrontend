@@ -71,7 +71,7 @@ function Birthdetails() {
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-600/5 blur-[100px] rounded-full -z-10"></div>
 
         <div className="text-center mb-16">
-          <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent tracking-tight mb-4">
+          <h1 className="text-5xl lg:text-6xl font-bold bg-linear-to-b from-white via-white to-white/40 bg-clip-text text-transparent tracking-tight mb-4">
             Birth Details
           </h1>
           <p className="text-slate-400 text-lg lg:text-xl font-light max-w-2xl mx-auto leading-relaxed">
@@ -82,7 +82,7 @@ function Birthdetails() {
         <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Personal & Time Details */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-8 lg:p-10 backdrop-blur-3xl shadow-2xl space-y-8">
+            <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 lg:p-10 backdrop-blur-3xl shadow-2xl space-y-8">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
                 <input 
@@ -91,7 +91,7 @@ function Birthdetails() {
                   required
                   onChange={(e) => setName(e.target.value)} 
                   placeholder="e.g. Johnathan Smith"
-                  className="w-full bg-white/[0.05] border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all placeholder:text-slate-600 text-lg"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all placeholder:text-slate-600 text-lg"
                 />
               </div>
 
@@ -104,7 +104,7 @@ function Birthdetails() {
                     required
                     min="1" max="31"
                     onChange={(e) => setDate(e.target.value)} 
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
                   />
                 </div>
                 <div className="space-y-2">
@@ -115,7 +115,7 @@ function Birthdetails() {
                     required
                     min="1" max="12"
                     onChange={(e) => setMonth(e.target.value)} 
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
                   />
                 </div>
                 <div className="space-y-2">
@@ -125,7 +125,7 @@ function Birthdetails() {
                     value={year} 
                     required
                     onChange={(e) => setYear(e.target.value)} 
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
                   />
                 </div>
               </div>
@@ -139,7 +139,7 @@ function Birthdetails() {
                     required
                     min="0" max="23"
                     onChange={(e) => setHours(e.target.value)} 
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
                   />
                 </div>
                 <div className="space-y-2">
@@ -150,7 +150,7 @@ function Birthdetails() {
                     required
                     min="0" max="59"
                     onChange={(e) => setMinutes(e.target.value)} 
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
                   />
                 </div>
                 <div className="space-y-2">
@@ -160,7 +160,7 @@ function Birthdetails() {
                     value={seconds} 
                     min="0" max="59"
                     onChange={(e) => setSeconds(e.target.value)} 
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all text-lg"
                   />
                 </div>
               </div>
@@ -178,7 +178,7 @@ function Birthdetails() {
 
           {/* Right Column: Location Discovery */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-8 backdrop-blur-3xl shadow-2xl h-full flex flex-col">
+            <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 backdrop-blur-3xl shadow-2xl h-full flex flex-col">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-2 rounded-xl bg-purple-500/10 border border-purple-500/20">
                   <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,7 +202,7 @@ function Birthdetails() {
                       }
                     }}
                     placeholder="Search your birth city..."
-                    className="w-full bg-white/[0.05] border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all placeholder:text-slate-600 pr-12"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all placeholder:text-slate-600 pr-12"
                   />
                   {loading && (
                     <div className="absolute right-4 top-1/2 -translate-y-1/2">
@@ -230,7 +230,7 @@ function Birthdetails() {
                         className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 group ${
                           latitude === item.lat 
                             ? 'bg-purple-500/20 border-purple-500/50 shadow-[0_0_20px_rgba(168,85,247,0.15)]' 
-                            : 'bg-white/[0.02] border-white/5 hover:bg-white/[0.08] hover:border-white/10'
+                            : 'bg-white/2 border-white/5 hover:bg-white/8 hover:border-white/10'
                         }`}
                       >
                         <p className={`text-sm font-medium ${latitude === item.lat ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>
@@ -248,7 +248,7 @@ function Birthdetails() {
                 </div>
 
                 {latitude && (
-                  <div className="mt-auto p-6 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border border-purple-500/20 rounded-3xl animate-in fade-in slide-in-from-bottom-2">
+                  <div className="mt-auto p-6 bg-linear-to-br from-purple-500/10 to-indigo-500/10 border border-purple-500/20 rounded-3xl animate-in fade-in slide-in-from-bottom-2">
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em]">Location Locked</span>
                       <svg className="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20">

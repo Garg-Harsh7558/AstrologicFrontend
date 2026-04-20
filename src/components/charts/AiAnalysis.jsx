@@ -20,7 +20,7 @@ function AiAnalysis() {
     if (!datatoai) {
         return (
             <div className="min-h-screen bg-[#050508] flex items-center justify-center p-10 font-['Outfit']">
-                <div className="text-center p-12 bg-white/[0.02] border border-white/10 rounded-[3rem] backdrop-blur-2xl">
+                <div className="text-center p-12 bg-white/2 border border-white/10 rounded-[3rem] backdrop-blur-2xl">
                     <h2 className="text-3xl font-bold text-white mb-4">Cosmic Silence</h2>
                     <p className="text-slate-400 mb-8 max-w-xs mx-auto">The AI needs your birth chart to begin the interpretation. Please select a profile first.</p>
                     <button 
@@ -67,7 +67,7 @@ function AiAnalysis() {
             {/* Header */}
             <header className="p-4 md:p-6 border-b border-white/5 backdrop-blur-md bg-black/20 flex justify-between items-center z-10">
                 <div className="flex items-center gap-3 md:gap-4">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-purple-500/20">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-linear-to-tr from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-purple-500/20">
                         <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
@@ -92,7 +92,7 @@ function AiAnalysis() {
 
                 {messages.length === 0 && (
                     <div className="h-full flex flex-col items-center justify-center text-center max-w-md mx-auto space-y-6 opacity-60">
-                        <div className="p-8 rounded-[2.5rem] bg-white/[0.02] border border-white/5 italic text-slate-400 text-sm leading-relaxed">
+                        <div className="p-8 rounded-[2.5rem] bg-white/2 border border-white/5 italic text-slate-400 text-sm leading-relaxed">
                             "The stars have aligned and your data is ready. Ask me anything about your placements, career, or spiritual path."
                         </div>
                     </div>
@@ -100,7 +100,7 @@ function AiAnalysis() {
 
                 {messages.map((msg, idx) => (
                     <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                        <div className={`max-w-[90%] md:max-w-[70%] p-5 md:p-6 rounded-2xl md:rounded-[2rem] text-sm md:text-base leading-relaxed shadow-sm transition-all duration-500 ${
+                        <div className={`max-w-[90%] md:max-w-[70%] p-5 md:p-6 rounded-2xl md:rounded-4xl text-sm md:text-base leading-relaxed shadow-sm transition-all duration-500 ${
                             msg.role === 'user' 
                                 ? 'bg-purple-600 text-white rounded-br-none shadow-purple-500/10' 
                                 : 'bg-amber-500/5 border border-white/10 text-slate-100 rounded-bl-none backdrop-blur-xl'
@@ -114,7 +114,7 @@ function AiAnalysis() {
 
                 {isTyping && (
                     <div className="flex justify-start">
-                        <div className="bg-white/[0.05] border border-white/10 p-6 rounded-[2rem] rounded-bl-none backdrop-blur-xl">
+                        <div className="bg-white/5 border border-white/10 p-6 rounded-4xl rounded-bl-none backdrop-blur-xl">
                             <div className="flex gap-1">
                                 <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-bounce"></div>
                                 <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-bounce [animation-delay:0.2s]"></div>
@@ -134,7 +134,7 @@ function AiAnalysis() {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         placeholder="Ask the universe..."
-                        className="flex-1 bg-white/[0.05] border border-white/10 rounded-xl md:rounded-2xl px-4 md:px-6 py-3.5 md:py-4 text-sm focus:outline-none focus:border-purple-500/50 focus:bg-white/[0.08] transition-all"
+                        className="flex-1 bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-4 md:px-6 py-3.5 md:py-4 text-sm focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all"
                     />
                     <button 
                         type="submit"

@@ -186,15 +186,15 @@ function Displaycharts() {
         <div className="min-h-screen bg-[#050508] text-white font-['Outfit']">
             <Navbar />
             
-            <div className="max-w-7xl mx-auto p-6 py-12 lg:p-20">
-                <div className="mb-16">
-                    <h1 className="text-5xl font-bold bg-linear-to-r from-white to-white/40 bg-clip-text text-transparent mb-6">Celestial Vault</h1>
-                    <div className="flex gap-4 overflow-x-auto pb-6 custom-scrollbar scroll-smooth">
+            <div className="max-w-7xl mx-auto p-4 py-8 md:p-10 lg:p-20">
+                <div className="mb-10 md:mb-16">
+                    <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-white/40 bg-clip-text text-transparent mb-6">Celestial Vault</h1>
+                    <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar scroll-smooth snap-x">
                         {charts.allchart?.map((profile, i) => (
                             <button 
                                 key={i} 
                                 onClick={() => {setSelectedProfile(profile);setDatatoai(profile.allChartDataString)}}
-                                className={`px-8 py-4 rounded-2xl text-xs font-bold uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
+                                className={`px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl text-[10px] md:text-xs font-bold uppercase tracking-widest whitespace-nowrap transition-all duration-300 snap-start ${
                                     selectedProfile?.name === profile.name 
                                     ? 'bg-white text-black shadow-[0_20px_40px_rgba(255,255,255,0.1)] scale-105' 
                                     : 'bg-white/5 text-slate-500 hover:text-white border border-white/5'
@@ -207,36 +207,36 @@ function Displaycharts() {
                 </div>
 
                 {selectedProfile && (
-                    <div className="space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <div className="space-y-6 md:space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
                         {/* Profile Header with Delete Button */}
-                        <div className="flex justify-between items-center bg-white/2 border-l-4 border-purple-500 p-6 rounded-r-3xl">
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white/2 border-l-4 border-purple-500 p-6 rounded-r-2xl md:rounded-r-3xl gap-4">
                             <div>
-                                <h2 className="text-3xl font-bold text-white mb-1 uppercase tracking-tight">{selectedProfile.name}</h2>
+                                <h2 className="text-2xl md:text-3xl font-bold text-white mb-1 uppercase tracking-tight">{selectedProfile.name}</h2>
                                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Active Record</p>
                             </div>
-                            <div className="flex gap-3 items-center">
+                            <div className="flex gap-3 items-center w-full sm:w-auto">
                                 <button 
                                     onClick={() => navigate('/aianalysis', { state: { datatoai: datatoai } })}
-                                    className="px-6 py-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-widest hover:bg-purple-500 hover:text-white transition-all"
+                                    className="flex-1 sm:flex-none px-4 md:px-6 py-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-purple-500 hover:text-white transition-all"
                                 >
                                     AI Analysis
                                 </button>
                                 <button 
                                     onClick={handleDelete}
                                     disabled={isDeleting}
-                                    className="px-6 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all disabled:opacity-50"
+                                    className="flex-1 sm:flex-none px-4 md:px-6 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all disabled:opacity-50"
                                 >
-                                    {isDeleting ? 'Deleting...' : 'Delete Profile'}
+                                    {isDeleting ? 'Deleting...' : 'Delete'}
                                 </button>
                             </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-2 p-2 bg-white/5 rounded-3xl border border-white/10 w-fit">
+                        <div className="flex flex-wrap gap-2 p-1.5 md:p-2 bg-white/5 rounded-2xl md:rounded-3xl border border-white/10 w-full sm:w-fit">
                             {tabs.map(tab => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`px-8 py-4 rounded-3xl text-[10px] font-bold tracking-[0.2em] uppercase transition-all ${
+                                    className={`flex-1 sm:flex-none px-4 md:px-8 py-3 md:py-4 rounded-xl md:rounded-3xl text-[9px] md:text-[10px] font-bold tracking-widest md:tracking-[0.2em] uppercase transition-all whitespace-nowrap ${
                                         activeTab === tab.id 
                                         ? 'bg-white/10 text-white shadow-[0_0_20px_rgba(255,255,255,0.05)]' 
                                         : 'text-slate-500 hover:text-slate-300'
@@ -247,7 +247,7 @@ function Displaycharts() {
                             ))}
                         </div>
 
-                        <div className="min-h-[600px]">
+                        <div className="min-h-[400px] md:min-h-[600px]">
                             {['d1Chart', 'd4Chart', 'd8Chart', 'd9Chart', 'd10Chart'].includes(activeTab) && (
                                 <VargaTable data={selectedProfile[activeTab]} chartType={activeTab} />
                             )}
@@ -263,8 +263,8 @@ function Displaycharts() {
                 
                 {/* Empty State */}
                 {!loading && !selectedProfile && (
-                    <div className="text-center py-40 bg-white/2 border border-dashed border-white/10 rounded-[3rem]">
-                        <p className="text-slate-500 text-lg italic">Your vault is empty. Generate a birth profile to get started.</p>
+                    <div className="text-center py-24 md:py-40 bg-white/2 border border-dashed border-white/10 rounded-3xl md:rounded-4xl px-6">
+                        <p className="text-slate-500 text-base md:text-lg italic leading-relaxed">Your vault is empty. Generate a birth profile to get started.</p>
                     </div>
                 )}
             </div>

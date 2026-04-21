@@ -57,33 +57,33 @@ function ForgotPassword() {
         <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-500 hover:border-purple-500/30">
           
           {/* Header Section */}
-          <div className="pt-12 pb-6 px-10 text-center">
+          <div className="pt-8 md:pt-12 pb-6 px-6 md:px-10 text-center">
             <div className="inline-block mb-4 p-3 rounded-full bg-linear-to-br from-purple-500/10 to-indigo-500/10 border border-white/10">
               <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 00-2 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
-            <h1 className="text-3xl font-bold text-white mb-2 bg-linear-to-r from-white via-white to-purple-200 bg-clip-text">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 bg-linear-to-r from-white via-white to-purple-200 bg-clip-text">
               Restore Access
             </h1>
-            <p className="text-slate-400 text-sm font-light">Invoke the cosmic reset for your portal</p>
+            <p className="text-slate-400 text-xs md:text-sm font-light leading-relaxed">Invoke the cosmic reset for your portal</p>
           </div>
 
           {/* Toggle Tabs */}
-          <div className="px-10 mb-8">
+          <div className="px-6 md:px-10 mb-8">
             <div className="flex p-1 bg-black/40 rounded-2xl border border-white/5 relative">
               <div 
                 className={`absolute inset-y-1 transition-all duration-300 ease-out bg-linear-to-r from-purple-600 to-indigo-600 rounded-xl shadow-lg ${useEmail ? 'left-1 right-[50%]' : 'left-[50%] right-1'}`}
               ></div>
               <button 
                 onClick={() => setUseEmail(true)}
-                className={`flex-1 py-2.5 text-xs font-semibold uppercase tracking-wider z-10 transition-colors duration-300 ${useEmail ? 'text-white' : 'text-slate-500 hover:text-slate-300'}`}
+                className={`flex-1 py-2 md:py-2.5 text-[10px] md:text-xs font-semibold uppercase tracking-wider z-10 transition-colors duration-300 ${useEmail ? 'text-white' : 'text-slate-500 hover:text-slate-300'}`}
               >
                 Email
               </button>
               <button 
                 onClick={() => setUseEmail(false)}
-                className={`flex-1 py-2.5 text-xs font-semibold uppercase tracking-wider z-10 transition-colors duration-300 ${!useEmail ? 'text-white' : 'text-slate-500 hover:text-slate-300'}`}
+                className={`flex-1 py-2 md:py-2.5 text-[10px] md:text-xs font-semibold uppercase tracking-wider z-10 transition-colors duration-300 ${!useEmail ? 'text-white' : 'text-slate-500 hover:text-slate-300'}`}
               >
                 Username
               </button>
@@ -91,7 +91,7 @@ function ForgotPassword() {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="px-10 pb-12 space-y-5">
+          <form onSubmit={handleSubmit} className="px-6 md:px-10 pb-10 md:pb-12 space-y-5">
             {message.text && (
               <div className={`p-4 rounded-xl text-xs font-semibold text-center animate-in fade-in slide-in-from-top-2 duration-300 ${
                 message.type === 'success' ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'

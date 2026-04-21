@@ -65,7 +65,7 @@ function AiAnalysis() {
     return (
         <div className="min-h-screen bg-[#050508] text-white font-['Outfit'] flex flex-col h-screen overflow-hidden">
             {/* Header */}
-            <header className="p-4 md:p-6 border-b border-white/5 backdrop-blur-md bg-black/20 flex justify-between items-center z-10">
+            <header className="p-4 md:p-6 border-b border-white/5 backdrop-blur-md bg-black/20 flex justify-between items-center z-20">
                 <div className="flex items-center gap-3 md:gap-4">
                     <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-linear-to-tr from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-purple-500/20">
                         <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,26 +73,26 @@ function AiAnalysis() {
                         </svg>
                     </div>
                     <div>
-                        <h1 className="text-lg md:text-xl font-bold tracking-tight">Astra AI</h1>
-                        <p className="text-[9px] md:text-[10px] text-purple-400 uppercase tracking-widest font-bold">Divine Interpreter</p>
+                        <h1 className="text-base md:text-xl font-bold tracking-tight">Astra AI</h1>
+                        <p className="text-[8px] md:text-[10px] text-purple-400 uppercase tracking-widest font-bold">Divine Interpreter</p>
                     </div>
                 </div>
                 <button 
                     onClick={() => navigate('/displaycharts')}
-                    className="text-[9px] md:text-[10px] text-slate-500 hover:text-white uppercase tracking-widest font-bold transition-colors bg-white/5 px-4 py-2 rounded-lg border border-white/5 sm:bg-transparent sm:p-0 sm:border-0"
+                    className="text-[9px] md:text-[10px] text-slate-500 hover:text-white uppercase tracking-widest font-bold transition-colors bg-white/5 md:bg-transparent px-3 py-2 md:p-0 rounded-lg border border-white/5 md:border-0"
                 >
                     Close
                 </button>
             </header>
 
             {/* Chat Area */}
-            <main className="flex-1 overflow-y-auto p-6 md:p-10 space-y-6 custom-scrollbar relative">
+            <main className="flex-1 overflow-y-auto p-4 md:p-10 space-y-4 md:space-y-6 custom-scrollbar relative">
                 {/* Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
                 {messages.length === 0 && (
-                    <div className="h-full flex flex-col items-center justify-center text-center max-w-md mx-auto space-y-6 opacity-60">
-                        <div className="p-8 rounded-[2.5rem] bg-white/2 border border-white/5 italic text-slate-400 text-sm leading-relaxed">
+                    <div className="h-full flex flex-col items-center justify-center text-center max-w-md mx-auto space-y-6 px-4">
+                        <div className="p-6 md:p-10 rounded-[2.5rem] bg-white/2 border border-white/10 italic text-slate-400 text-sm md:text-base leading-relaxed backdrop-blur-xl">
                             "The stars have aligned and your data is ready. Ask me anything about your placements, career, or spiritual path."
                         </div>
                     </div>

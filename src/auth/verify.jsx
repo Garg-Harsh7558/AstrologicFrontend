@@ -79,20 +79,20 @@ function Verify() {
       <div className="relative z-10 w-full max-w-[450px] p-4 animate-in fade-in zoom-in duration-700">
         <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-500 hover:border-purple-500/30">
           {/* Header Section */}
-          <div className="pt-12 pb-6 px-10 text-center">
+          <div className="pt-8 md:pt-12 pb-6 px-6 md:px-10 text-center">
             <div className="inline-block mb-4 p-3 rounded-full bg-linear-to-br from-purple-500/10 to-indigo-500/10 border border-white/10">
               <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h1 className="text-3xl font-bold text-white mb-2 bg-linear-to-r from-white via-white to-purple-200 bg-clip-text">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 bg-linear-to-r from-white via-white to-purple-200 bg-clip-text">
               Verify Energy
             </h1>
-            <p className="text-slate-400 text-sm font-light">Enter the 6-digit code sent to your email</p>
+            <p className="text-slate-400 text-xs md:text-sm font-light leading-relaxed">Enter the 6-digit code sent to your email</p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="px-10 pb-12 space-y-6">
+          <form onSubmit={handleSubmit} className="px-6 md:px-10 pb-10 md:pb-12 space-y-6">
             {message.text && (
               <div className={`p-4 rounded-xl text-xs font-semibold text-center animate-in fade-in slide-in-from-top-2 duration-300 ${
                 message.type === 'success' ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'

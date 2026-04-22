@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
 import Navbar from '../Navbar';
@@ -23,8 +23,19 @@ function Birthdetails() {
   const [error, setError] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
 
+  useEffect(() => {
+    // Only search if city has at least 3 characters and it's not the already selected location
+    if (city.length >= 3 && city !== selectedLocation) {
+      const timer = setTimeout(() => {
+        fetchingordinates(city);
+      }, 600); // 600ms debounce
+      return () => clearTimeout(timer);
+    } else if (city.length < 3) {
+      setOrdinates([]);
+    }
+  }, [city, selectedLocation]);
+
   const fetchingordinates = async (searchCity) => {
-    if (!searchCity || searchCity.length < 3) return;
     setLoading(true);
     try {
       const response = await api.post(`/astro/get-geocode`, { city: searchCity });
@@ -196,9 +207,8 @@ function Birthdetails() {
                     value={city} 
                     onChange={(e) => setCity(e.target.value)} 
                     onKeyDown={(e) => {
-                      // Trigger search when a character key is pressed and current length + 1 >= 3
-                      if (e.key.length === 1 && e.target.value.length >= 2) {
-                        fetchingordinates(e.target.value + e.key);
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
                       }
                     }}
                     placeholder="Search your birth city..."

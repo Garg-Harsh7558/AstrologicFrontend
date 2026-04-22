@@ -188,6 +188,9 @@ function Register() {
             <p className="text-center text-slate-500 text-xs mt-6">
               Already a member? <Link to="/login" className="text-purple-400 font-bold hover:text-purple-300 transition-colors">Sign In</Link>
             </p>
+            <p className="text-center text-slate-500 text-xs mt-6">
+              Registered but unverified? <Link to="/verify" className="text-purple-400 font-bold hover:text-purple-300 transition-colors">Verify</Link>
+            </p>
           </form>
         </div>
       </div>

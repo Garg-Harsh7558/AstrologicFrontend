@@ -162,6 +162,9 @@ function Login() {
             <p className="text-center text-slate-500 text-xs mt-6">
               New seeker? <Link to="/register" className="text-purple-400 font-bold hover:text-purple-300 transition-colors">Join the Circle</Link>
             </p>
+            <p className="text-center text-slate-500 text-xs mt-6">
+              Registered but unverified? <Link to="/verify" className="text-purple-400 font-bold hover:text-purple-300 transition-colors">Verify</Link>
+            </p>
           </form>
         </div>
       </div>

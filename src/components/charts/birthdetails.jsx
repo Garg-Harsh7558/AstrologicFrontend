@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
-import Navbar from '../Navbar';
+
 
 /**
  * Birthdetails Component
@@ -28,7 +28,7 @@ function Birthdetails() {
     if (city.length >= 3 && city !== selectedLocation) {
       const timer = setTimeout(() => {
         fetchingordinates(city);
-      }, 600); // 600ms debounce
+      }, 300); // 300ms debounce
       return () => clearTimeout(timer);
     } else if (city.length < 3) {
       setOrdinates([]);
@@ -74,7 +74,7 @@ function Birthdetails() {
 
   return (
     <div className="min-h-screen bg-[#050508] text-white font-['Outfit'] selection:bg-purple-500/30">
-      <Navbar />
+
       
       <main className="max-w-5xl mx-auto px-4 md:px-6 py-10 md:py-12 lg:py-20 relative">
         {/* Decorative Background Elements */}

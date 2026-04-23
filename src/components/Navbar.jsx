@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
 
+import { useNavigate, Link } from 'react-router-dom';
+import api from '../api/axios';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -9,12 +9,9 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      // Calling the backend logout endpoint
-      await axios.post('http://localhost:5000/api/auth/logout', {}, { withCredentials: true });
-      
+      await api.post('/auth/logout');
       navigate('/login');
     } catch (error) {
-      console.error('Logout failed:', error);
       navigate('/login');
     }
   };

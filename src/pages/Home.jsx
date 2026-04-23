@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import api from '../api/axios';
 import bgImg from '../assets/bg.png';
 
@@ -99,7 +98,7 @@ function Home() {
 
   return (
     <div className="min-h-screen w-full bg-[#050508] relative overflow-hidden font-['Outfit']">
-      <Navbar />
+
       
       {/* Dynamic Background Image */}
       <div 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/axios';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../Navbar';
+
 
 function Displaycharts() {
     const navigate = useNavigate();
@@ -184,7 +184,7 @@ function Displaycharts() {
 
     return (
         <div className="min-h-screen bg-[#050508] text-white font-['Outfit']">
-            <Navbar />
+
             
             <div className="max-w-7xl mx-auto p-4 py-8 md:p-10 lg:p-20">
                 <div className="mb-10 md:mb-16">

@@ -30,8 +30,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/birthdetails" element={<Birthdetails />} />
           <Route path="/displaycharts" element={<Displaycharts />} />
+          </Route>
           <Route path="/aianalysis" element={<AiAnalysis />} />
-        </Route>
         </Route>
         
         {/* Fallback */}

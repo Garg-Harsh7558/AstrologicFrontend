@@ -79,9 +79,9 @@ function AiAnalysis() {
                 </div>
                 <button 
                     onClick={() => navigate('/displaycharts')}
-                    className="text-[9px] md:text-[10px] text-slate-500 hover:text-white uppercase tracking-widest font-bold transition-colors bg-white/5 md:bg-transparent px-3 py-2 md:p-0 rounded-lg border border-white/5 md:border-0"
-                >
-                    Close
+                    className="text-[9px] md:text-[10px] text-slate-500 hover:text-red-600 uppercase tracking-widest font-bold transition-colors bg-white/5 md:bg-transparent px-3 py-2 md:p-0 rounded-lg border border-white/5 md:border-0"
+                 >
+                    Close ❌
                 </button>
             </header>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
 
 function AiAnalysis() {
@@ -77,12 +77,12 @@ function AiAnalysis() {
                         <p className="text-[8px] md:text-[10px] text-purple-400 uppercase tracking-widest font-bold">Divine Interpreter</p>
                     </div>
                 </div>
-                <button 
-                    onClick={() => navigate('/displaycharts')}
+                <Link
+                    to="/displaycharts"
                     className="text-[9px] md:text-[10px] text-slate-500 hover:text-red-600 uppercase tracking-widest font-bold transition-colors bg-white/5 md:bg-transparent px-3 py-2 md:p-0 rounded-lg border border-white/5 md:border-0"
                  >
                     Close ❌
-                </button>
+                </Link>
             </header>
 
             {/* Chat Area */}

@@ -63,7 +63,7 @@ function Birthdetails() {
         timezone: 5.5, // Default for India, can be made dynamic
       };
       await api.post(`/astro/take-birth-details`, payload);
-      navigate("/");
+      navigate("/displaycharts");
     } catch (error) {
       setError(error.response?.data?.message || "Failed to save details.");
       console.log(error);

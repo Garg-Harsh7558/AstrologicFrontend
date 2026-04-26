@@ -174,10 +174,10 @@ function Displaycharts() {
 
     const tabs = [
         { id: 'd1Chart', label: 'D1 Chart' },
-        { id: 'd4Chart', label: 'D4 Chart' },
-        { id: 'd8Chart', label: 'D8 Chart' },
         { id: 'd9Chart', label: 'D9 Chart' },
         { id: 'd10Chart', label: 'D10 Chart' },
+        { id: 'd4Chart', label: 'D4 Chart' },
+        { id: 'd8Chart', label: 'D8 Chart' },
         { id: 'shadbala', label: 'Shadbala' },
         { id: 'dashatimings', label: 'Vimshottari Dasha' }
     ];

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { useNavigate, Link } from 'react-router-dom';
 import api from '../api/axios';
+import logo from '../assets/logo.jpeg';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -20,12 +21,11 @@ function Navbar() {
     <nav className="sticky top-0 w-full z-100 backdrop-blur-md bg-black/40 border-b border-white/5 px-4 md:px-10 py-4 font-['Outfit']">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="p-2 rounded-lg bg-linear-to-br from-purple-500/20 to-indigo-500/20 border border-white/10">
-            <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" />
-            </svg>
+          <div className="p-2 flex rounded-lg bg-linear-to-br from-purple-500/20 to-indigo-500/20 border border-white/10">
+            <img src={logo} className='rounded-full mr-4' alt="Astro Logic Logo" width="30" height="30" />
+            <span className="text-xl font-bold text-white tracking-tight">AstroLogic</span>
+
           </div>
-          <span className="text-xl font-bold text-white tracking-tight">AstroLogic</span>
         </div>
 
         {/* Desktop Menu */}

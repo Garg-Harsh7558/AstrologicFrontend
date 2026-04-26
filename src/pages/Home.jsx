@@ -102,7 +102,7 @@ function Home() {
       
       {/* Dynamic Background Image */}
       <div 
-        className="absolute inset-0 opacity-10 bg-cover bg-center"
+        className="absolute inset-0 opacity-50 bg-cover bg-center"
         style={{ backgroundImage: `url(${bgImg})` }}
       ></div>
 

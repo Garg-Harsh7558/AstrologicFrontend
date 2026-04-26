@@ -207,7 +207,7 @@ function Displaycharts() {
                 </div>
 
                 {selectedProfile && (
-                    <div className="space-y-6 md:space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <div className="space-y-6 md:space-y-10 animate-in fade-in zoom-in duration-700">
                         {/* Profile Header with Delete Button */}
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white/2 border-l-4 border-purple-500 p-6 rounded-r-2xl md:rounded-r-3xl gap-4">
                             <div>
@@ -217,7 +217,7 @@ function Displaycharts() {
                             <div className="flex gap-3 items-center w-full sm:w-auto">
                                 <button 
                                     onClick={() => navigate('/aianalysis', { state: { datatoai: datatoai } })}
-                                    className="flex-1 sm:flex-none px-4 md:px-6 py-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-purple-500 hover:text-white transition-all"
+                                    className="flex-1 sm:flex-none px-4 md:px-6 py-3 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-green-500 hover:text-white transition-all"
                                 >
                                     AI Analysis
                                 </button>

@@ -63,9 +63,6 @@ function Login() {
           {/* Header Section */}
           <div className="pt-8 md:pt-12 pb-6 px-6 md:px-10 text-center">
             <div className="inline-block mb-4 rounded-full bg-linear-to-br from-purple-500/10 to-indigo-500/10 border border-white/10">
-              {/* <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" />
-              </svg> */}
               <img src={logo} className='rounded-full' alt="Astro Logic Logo" width="150" height="150" />
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 bg-linear-to-r from-white via-white to-purple-200 bg-clip-text">
